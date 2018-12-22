@@ -7,6 +7,7 @@ var exerciseGroups = {
   ],
   "biceps": [
     {name: "dumbell curl"},
+    {name: "hammer curl"},
   ],
   "cardio": [
     {name: "jump rope"},
@@ -61,9 +62,13 @@ function onButtonClick() {
     
     var division = $("<div>");
 
-    var heading = $("<h3>");
+    var heading = $("<h2>");
     heading.text(exercise.name);
     division.append(heading);
+
+    var description = $("<p>");
+    description.text("Describe how to perform the lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
+    division.append(description);
 
     var recommendations = $("<div>");
     recommendations.addClass("recommendations");
