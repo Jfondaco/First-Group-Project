@@ -66,7 +66,7 @@ function onButtonClick() {
     division.append(heading);
 
     var recommendations = $("<div>");
-    recommendations.addClass("recommendataions");
+    recommendations.addClass("recommendations");
     searchExerciseAndAppend(exercise.name, recommendations);
     division.append(recommendations);
 

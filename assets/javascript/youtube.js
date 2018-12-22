@@ -23,10 +23,12 @@ function searchExerciseAndAppend(exercise, resultElement) {
       var item = response.items[i];
       
       var division = $("<div>");
+      division.addClass("youtube-video")
   
-      var paragraph = $("<p>");
-      paragraph.text(item.snippet.title);
-      division.append(paragraph);
+      var title = $("<p>");
+      title.addClass("youtube-video-title");
+      title.text(item.snippet.title);
+      division.append(title);
   
       var width = 280;
       var height = 160;
