@@ -47,7 +47,7 @@ function shuffle(array) {
   }
 }
 
-function onButtonClick(event) {
+function onButtonClick() {
   var value = $(this).val();
   var group = exerciseGroups[value];
 

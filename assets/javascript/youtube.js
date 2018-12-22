@@ -31,7 +31,7 @@ function searchExerciseAndAppend(exercise, resultElement) {
       var width = 280;
       var height = 160;
   
-      var iframe = $("<iframe>")
+      var iframe = $("<iframe>");
       iframe.attr("allowFullScreen", "allowFullScreen");
       iframe.attr("src", buildIframeUrl(item.id.videoId, width, height));
       iframe.attr("width", width);
