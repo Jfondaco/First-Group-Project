@@ -54,7 +54,7 @@ function onButtonClick() {
   var indices = makeArrayCountingUpward(group.length);
   shuffle(indices);
 
-  $("#result").empty();
+  $("#exercise-result").empty();
 
   for(var i = 0; i < exercisePickCount; i++) {
     var exercise = group[indices[i]];
@@ -67,7 +67,7 @@ function onButtonClick() {
 
     searchExerciseAndAppend(exercise.name, division);
 
-    $("#result").append(division);
+    $("#exercise-result").append(division);
   }
 }
 
