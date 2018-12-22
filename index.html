@@ -11,6 +11,63 @@
     
 </head>
 <body>
+        <nav>
+            <div class="nav-wrapper">
+                  <a href="#" class="brand-logo">Logo</a>
+            </div>
+        </nav>
+        <div class = "container">
+            <div class = "row">
+                <div class = "col s6">
+                        <a class="waves-effect waves-light btn-large"><i class="material-icons left"></i>Meal Plan</a>
+                        <form action="/action_page.php">
+                            Age:<br>
+                            <input type="number" id = "calorie-age" name="firstname" value="Mickey">
+                            <br>
+                            Weight:<br>
+                            <input type="number" id = "calorie-weight" name="lastname" value="Mouse">
+                            Height:<br>
+                            <input type="number" id = "calorie-height" name="firstname" value="Mickey">
+                            <br><br>
+                            <input type="submit" id = "calorie-result" value="Results">
+                          </form> 
+
+
+                </div>
+                <div class = "col s6">
+                        <a class="waves-effect waves-light btn-large"><i class="material-icons left"></i>Exercise</a>
+                        <div class="row">
+                            <div class = "col s2">
+                                <button id = "cardio-button">Cardio</button>
+                                <button id = "abs-button">Abs</button>
+                                <button id = "glutes-button">Glutes</button>
+                            </div>
+                            <div class = "col s2">
+                                <button id = "shoulders-button">Shoulders</button>
+                                <button id = "back-button">Back</button>
+                                <button id = "legs-button">Legs</button>
+                            </div>
+                            <div class = "col s2">
+                                <button id = "chest-button">Chest</button>
+                                <button id = "biceps-button">Biceps</button>
+                                <button id = "triceps-button">Triceps</button>
+                            </div>
+                            
+                        </div>
+
+                </div>
+
+            </div>
+            <div class = "row">
+                <div class = "col s12" id = "result">
+
+                </div>
+                
+
+            </div>
+
+        </div>
+                    
 
 
     <script src="assets/javascript/app.js"></script>
