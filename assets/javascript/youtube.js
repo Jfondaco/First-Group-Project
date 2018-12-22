@@ -14,7 +14,7 @@ function buildIframeUrl(id, width, height) {
   return url;
 }
 
-function searchExerciseAndAddToId(exercise, resultId) {
+function searchExerciseAndAppend(exercise, resultElement) {
   $.ajax({
     method: "GET",
     url: buildSearchUrl(exercise),
@@ -40,7 +40,7 @@ function searchExerciseAndAddToId(exercise, resultId) {
       iframe.attr("frameborder", 0);
       division.append(iframe);
   
-      $("#" + resultId).append(division);
+      resultElement.append(division);
     }
   });
 }
