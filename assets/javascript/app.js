@@ -1,5 +1,8 @@
 var spoonURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?targetCalories=2000&timeFrame=day";
 
+hideMeals();
+hideExercise();
+
 $.ajax({
     url: spoonURL,
     method: "GET",
@@ -10,12 +13,33 @@ $.ajax({
         console.log(response);
     });
 
-    $("#MYBUTTONPLACEHOLDER").on("click", function(event){
+    $("#meal-button").on("click", function(event){
         event.preventDefault();
-
+        showMeals();
     });
 
-    function showMeals(){
-        $("#MEALPLANBUTTONPLACEHOLDER").style.display = "none";
-        $("#MEALPLANFORMPLACEHOLDER").style.display = "block";
+    $("#exercise-button").on("click", function(event){
+        event.preventDefault();
+        console.log("hello");
+        showExercise();
+    });
+
+    // hide/show functions start
+    function hideMeals(){
+        $("#meal-form").hide();
     }
+
+    function showMeals(){
+        $("#meal-button").hide();
+        $("#meal-form").show();
+    }
+
+    function hideExercise(){
+        $("#exercise-areas").hide();
+    }
+
+    function showExercise(){
+        $("#exercise-button").hide();
+        $("#exercise-areas").show();
+    }
+    // hide/show functions end
