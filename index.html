@@ -10,47 +10,71 @@
     <script src="assets/javascript/exercise.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
     
 </head>
 <body>
         <nav id = "hero">
             <div class="nav-wrapper">
-                  <a href="#" class="brand-logo">Logo</a>
+                  <a href="#" class="brand-logo"> <img src="assets/images/cloud.png" class="logo" alt="logo" width="500">
+                    <p class = "logo-text">Wellness Cloud</p>
+                </a>
+                  
             </div>
         </nav>
         <div class = "container">
             <div class = "row">
                 <div class = "col s6">
-                        <a id = "meal-button" class="waves-effect waves-light btn-large"><i class="material-icons left"></i>Meal Plan</a>
+                        <button id = "meal-button" class="waves-effect waves-light btn-large">Meal Plan</button>
                         <form id = "meal-form">
                             Age:<br>
-                            <input type="number" id = "calorie-age" name="firstname" value="Mickey">
+                            <input type="number" id = "calorie-age" name="age">
                             <br>
                             Weight:<br>
-                            <input type="number" id = "calorie-weight" name="lastname" value="Mouse">
+                            <input type="number" id = "calorie-weight" name="weight">
                             Height:<br>
-                            <input type="number" id = "calorie-height" name="firstname" value="Mickey">
-                            <br><br>
+                            <input type="number" id = "calorie-height-ft" name="height-ft">Feet<input type="number" id = "calorie-height-inches" name="height-inches">Inches<br>
+                            Gender: <br>
+                            <form action="#">
+                                <p>
+                                  <label>
+                                    <input class="with-gap" name="gender" type="radio" checked />
+                                    <span>Male</span>
+                                  </label>
+                                </p>
+                                <p>
+                                  <label>
+                                    <input class="with-gap" name="gender" type="radio" />
+                                    <span>Female</span>
+                                  </label>
+                                </p>
+                                <p>
+                                  <label>
+                                    <input class="with-gap" name="gender" type="radio"  />
+                                    <span>Other</span>
+                                  </label>
+                                </p>
+                            <br>
                             <input type="submit" id = "calorie-result" value="Results">
                           </form> 
-
-
+                          
                 </div>
                 <div class = "col s6">
-                        <a id = "exercise-button" class="waves-effect waves-light btn-large"><i class="material-icons left"></i>Exercise</a>
+                        <button id = "exercise-button" class="waves-effect waves-light btn-large">Exercise</button>
                         <div id = "exercise-areas" class="row">
-                            <div class = "col s2">
+                            <div class = "col s2 space">
                                 <button id = "cardio-button" value="cardio">Cardio</button>
                                 <button id = "abs-button" value="abs">Abs</button>
                                 <button id = "glutes-button" value="glutes">Glutes</button>
                             </div>
-                            <div class = "col s2">
-                                <button id = "shoulders-button" value="shoulders">Shoulders</button>
+                            <div class = "col s2 space">
+                                
+                                <button id = "chest-button" value="chest">Chest</button>
                                 <button id = "back-button" value="back">Back</button>
                                 <button id = "legs-button" value="legs">Legs</button>
                             </div>
-                            <div class = "col s2">
-                                <button id = "chest-button" value="chest">Chest</button>
+                            <div class = "col s2 space">
+                                <button id = "shoulders-button" value="shoulders">Shoulders</button>
                                 <button id = "biceps-button" value="biceps">Biceps</button>
                                 <button id = "triceps-button" value="triceps">Triceps</button>
                             </div>
