@@ -41,6 +41,7 @@ hideExercise();
 
     //on click for calorie result
     $("#calorie-result").on("click", function(event){
+
         event.preventDefault();
         age = parseInt($("#calorie-age").val().trim());
         weightPounds = parseInt($("#calorie-weight").val().trim());
@@ -69,7 +70,7 @@ hideExercise();
                 var mealImg = $("<img>");
                 mealImg.attr("id", "meal-image");
                 mealImg.attr("src","http://webknox.com/recipeImages/"+ results[i].image);
-                
+
                 var mealTitle = $("<h2>");
                 mealTitle.attr("id", "meal-title");
                 mealTitle.text(results[i].title);
@@ -77,7 +78,7 @@ hideExercise();
                 mealDiv.append(mealTitle);
                 mealDiv.append(mealImg);
 
-                $("#result").append(mealDiv);
+                $("#result").prepend(mealDiv);
             }
 
             });
