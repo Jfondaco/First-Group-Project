@@ -20,3 +20,21 @@
 #meal-div{
     background: lightblue;
 }
+
+.recommendations {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.youtube-video {
+    margin-left: 1em;
+    width: 240px;
+}
+
+.youtube-video-title {
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

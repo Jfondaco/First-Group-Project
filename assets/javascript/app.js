@@ -42,6 +42,8 @@ hideExercise();
     //on click for calorie result
     $("#calorie-result").on("click", function(event){
 
+        $("#result").empty();
+
         event.preventDefault();
         age = parseInt($("#calorie-age").val().trim());
         weightPounds = parseInt($("#calorie-weight").val().trim());

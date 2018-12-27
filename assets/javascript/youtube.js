@@ -1,7 +1,7 @@
 var apiKey = "AIzaSyDEUO74WPq56MPIa7k-BD1seFBaLK6sfBI";
 
 function buildSearchUrl(query) {
-  var url = "https://www.googleapis.com/youtube/v3/search?part=snippet"
+  var url = "https://www.googleapis.com/youtube/v3/search?part=snippet";
   url += "&q=" + encodeURIComponent(query);
   url += "&key=" + apiKey;
   return url;
@@ -17,19 +17,23 @@ function buildIframeUrl(id, width, height) {
 function searchExerciseAndAppend(exercise, resultElement) {
   $.ajax({
     method: "GET",
-    url: buildSearchUrl(exercise),
+    url: buildSearchUrl(exercise + " tutorial"),
   }).then(function(response) {
-    for(var i = 0; i < response.items.length; i++) {
+    var limit = Math.min(3, response.items.length);
+
+    for(var i = 0; i < limit; i++) {
       var item = response.items[i];
       
       var division = $("<div>");
+      division.addClass("youtube-video");
   
-      var paragraph = $("<p>");
-      paragraph.text(item.snippet.title);
-      division.append(paragraph);
+      var title = $("<p>");
+      title.addClass("youtube-video-title");
+      title.text(item.snippet.title);
+      division.append(title);
   
-      var width = 280;
-      var height = 160;
+      var width = 240;
+      var height = 135;
   
       var iframe = $("<iframe>");
       iframe.attr("allowFullScreen", "allowFullScreen");
