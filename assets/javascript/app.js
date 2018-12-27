@@ -34,18 +34,21 @@ hideExercise();
     //calorie calculator variables
     var age = 0;
     var weightPounds = 0;
-    var sex;
+    var sex = "male"
     var heightInches = 0;
     // activity factor will be static, 1.4 might change but assumes minimal activity?
     var activityFactor = 1.4;
 
     //on click for calorie result
     $("#calorie-result").on("click", function(event){
+
+        $("#result").empty();
+
         event.preventDefault();
-        age = $("#calorie-age").val().trim();
-        weightPounds = $("#calorie-weight").val().trim();
-        heightInches = $("#calorie-height").val().trim();
-        sex = $("##########")
+        age = parseInt($("#calorie-age").val().trim());
+        weightPounds = parseInt($("#calorie-weight").val().trim());
+        heightInches = parseInt($("#calorie-height").val().trim());
+        // sex = $("##########")
 
         targetCalories = computeCalories();
         console.log("Calories: "+targetCalories)
@@ -59,7 +62,27 @@ hideExercise();
                 'X-RapidAPI-Key': "zM5QZP2R1kmshOJ36ahyXh8O0o5zp1Pf94ojsnoBY9BXmViWZq"
               }
             }).then(function(response){
-                console.log(response);
+                var results = response.meals
+                console.log(results);
+            
+            for (var i = 0; i<results.length; i++){
+                var mealDiv = $("<div>");
+                mealDiv.attr("id", "meal-div");
+
+                var mealImg = $("<img>");
+                mealImg.attr("id", "meal-image");
+                mealImg.attr("src","http://webknox.com/recipeImages/"+ results[i].image);
+
+                var mealTitle = $("<h2>");
+                mealTitle.attr("id", "meal-title");
+                mealTitle.text(results[i].title);
+
+                mealDiv.append(mealTitle);
+                mealDiv.append(mealImg);
+
+                $("#result").prepend(mealDiv);
+            }
+
             });
 
 
@@ -67,7 +90,7 @@ hideExercise();
     //end on click for calorie result
 
     //formula function for daily calories
-    function computeCalories(weightPounds, heightInches, age, sex, activityFactor) {
+    function computeCalories() {
         var sexModifier;
         if (sex === "male") {
           sexModifier = 5;

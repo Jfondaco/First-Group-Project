@@ -7,6 +7,19 @@ nav {
 
 
 
+#meal-image{
+    width: 150px;
+    height: 150px;
+}
+
+#meal-title{
+    font-size: 20px;
+}
+
+#meal-div{
+    background: lightblue;
+}
+
 .recommendations {
     display: flex;
     flex-direction: row;
