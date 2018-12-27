@@ -34,10 +34,11 @@ hideExercise();
     //calorie calculator variables
     var age = 0;
     var weightPounds = 0;
-    var sex = "male"
+    var sex = "";
     var heightInches = 0;
     // activity factor will be static, 1.4 might change but assumes minimal activity?
     var activityFactor = 1.4;
+    
 
     //on click for calorie result
     $("#calorie-result").on("click", function(event){
@@ -47,8 +48,9 @@ hideExercise();
         event.preventDefault();
         age = parseInt($("#calorie-age").val().trim());
         weightPounds = parseInt($("#calorie-weight").val().trim());
-        heightInches = parseInt($("#calorie-height").val().trim());
-        // sex = $("##########")
+        heightInches = parseInt($("#calorie-height-inches").val().trim());
+        sex = $("input[name=gender]:checked").val();
+        console.log(sex);
 
         targetCalories = computeCalories();
         console.log("Calories: "+targetCalories)
