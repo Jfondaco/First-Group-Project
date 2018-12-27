@@ -1,12 +1,11 @@
-#hero {
-    height: 300px;
-    background: #b3abdf;
+nav {
+    height: 800px;
+    background-color: #a62659;
     text-align: center;
 }
 
-.brand-logo {
-    margin-top: 100px;
-}
+
+
 
 #meal-image{
     width: 150px;
@@ -30,6 +29,7 @@
 .youtube-video {
     margin-left: 1em;
     width: 240px;
+    margin-bottom: 20px;
 }
 
 .youtube-video-title {
@@ -38,3 +38,62 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+#exercise-result{
+    color: white;
+}
+
+#meal-button,
+#exercise-button{
+    height: 400px;
+    width: 400px;
+    margin-top: 30px;
+    border-radius: 10px;
+    font-family: 'Black Ops One', cursive;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+body {
+    background: #283640;
+}
+
+.nav-wrapper {
+    position: relative;
+}
+.brand-logo {
+    position: absolute;
+    top: 15%;
+    left: 30%;
+}
+.logo-text {
+    position: absolute;
+    bottom: 15%;
+    left: 27%;
+    font-family: 'Black Ops One', cursive;
+    color: #d9a11c;
+}
+form{
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#exercise-areas button{
+    background: #1cd992;
+    color: #283640;
+    margin: 50px;
+    padding: 5px;
+    border-radius: 6px;
+    width: 100px;
+    font-family: 'Black Ops One', cursive;
+}
+#exercise-areas button:hover{
+    background: #283640;
+    color: #1cd992;
+    border: 1px solid #1cd992;
+}
+
+.space {
+    margin-right: 20px;
+}
+
