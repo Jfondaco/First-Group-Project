@@ -64,10 +64,25 @@ hideExercise();
                 'X-RapidAPI-Key': "zM5QZP2R1kmshOJ36ahyXh8O0o5zp1Pf94ojsnoBY9BXmViWZq"
               }
             }).then(function(response){
-                var results = response.meals
+                var results = response.meals;
                 console.log(results);
             
             for (var i = 0; i<results.length; i++){
+
+                var recipeID = results[i].id;
+                console.log(recipeID);
+
+                $.ajax({
+                    url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/'+recipeID+'/summary',
+                    method: "GET",
+                    headers:{
+                        'X-RapidAPI-Key': "zM5QZP2R1kmshOJ36ahyXh8O0o5zp1Pf94ojsnoBY9BXmViWZq"
+                    }
+                }).then(function(response){
+                var recipeData = response.summary;
+                console.log(recipeData);
+                });
+
                 var mealDiv = $("<div>");
                 mealDiv.attr("id", "meal-div");
 
@@ -79,8 +94,13 @@ hideExercise();
                 mealTitle.attr("id", "meal-title");
                 mealTitle.text(results[i].title);
 
+                var mealRecipe = $("<p>");
+                mealRecipe.attr("id", "meal-recipe");
+                // mealRecipe.text(recipeData);
+
                 mealDiv.append(mealTitle);
                 mealDiv.append(mealImg);
+                // mealDiv.append(recipeData);
 
                 $("#result").prepend(mealDiv);
             }
