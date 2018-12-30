@@ -1,6 +1,8 @@
 var exerciseGroups = {
   "abs": [
-    {name: "sit ups"},
+    {name: "sit ups",
+    time: "1 minute",
+  },
   ],
   "back": [
     {name: "pull up"},
