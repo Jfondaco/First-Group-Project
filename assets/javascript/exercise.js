@@ -69,6 +69,7 @@ function onButtonClick() {
     var description = $("<p>");
     description.text("Describe how to perform the lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
     division.append(description);
+    division.addClass("results-div");
 
     var recommendations = $("<div>");
     recommendations.addClass("recommendations");
