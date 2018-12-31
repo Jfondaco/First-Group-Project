@@ -63,6 +63,7 @@ hideExercise();
 
         var spoonURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?targetCalories="+targetCalories+"&timeFrame=day";
 
+        //ajax for target calories
         $.ajax({
             url: spoonURL,
             method: "GET",
@@ -77,8 +78,6 @@ hideExercise();
 
                 var recipeID = results[i].id;
                 console.log(recipeID);
-
-                
 
                 var mealDiv = $("<div>");
                 mealDiv.attr("id", "meal-div");
@@ -96,6 +95,7 @@ hideExercise();
                 
                 $("#result").append(mealDiv);
                 
+                //ajax for recips
                 $.ajax({
                     url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/"+recipeID+"/summary",
                     method: "GET",
@@ -106,14 +106,8 @@ hideExercise();
                 
                 var recipeData = response.summary;
                 console.log(recipeData);
-
-                var mealRecipe = $("<p>");
-                mealRecipe.attr("id", "meal-recipe");
-                mealRecipe.text(recipeData);
-                mealDiv.append(recipeData);
-
                 
-
+                mealDiv.append(recipeData);
                 
                 });
             }
