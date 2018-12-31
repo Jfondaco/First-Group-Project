@@ -76,17 +76,20 @@ hideExercise();
             
             for (var i = 0; i<results.length; i++){
 
-                var recipeID = results[i].id;
+                let recipeID = results[i].id;
                 console.log(recipeID);
 
                 var mealDiv = $("<div>");
-                mealDiv.attr("id", "meal-div");
+                mealDiv.addClass("meal-div-class");
+                mealDiv.attr("id", "meal-div"+recipeID);
 
                 var mealImg = $("<img>");
+                mealImg.addClass("meal-image-class");
                 mealImg.attr("id", "meal-image");
                 mealImg.attr("src","http://webknox.com/recipeImages/"+ results[i].image);
 
                 var mealTitle = $("<h2>");
+                mealTitle.addClass("meal-title-class")
                 mealTitle.attr("id", "meal-title");
                 mealTitle.text(results[i].title);
 
@@ -104,10 +107,11 @@ hideExercise();
                     }
                 }).then(function(response){
                 
+                console.log("recipe id: "+recipeID)
                 var recipeData = response.summary;
                 console.log(recipeData);
                 
-                mealDiv.append(recipeData);
+                $("#meal-div"+recipeID).append(recipeData);
                 
                 });
             }

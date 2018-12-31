@@ -7,16 +7,16 @@ nav {
 
 
 
-#meal-image{
+.meal-image-class{
     width: 150px;
     height: 150px;
 }
 
-#meal-title{
+.meal-title-class{
     font-size: 20px;
 }
 
-#meal-div{
+.meal-div-class{
     background: lightblue;
 }
 
@@ -128,7 +128,7 @@ input {
     padding: 0;
 }
 
-#meal-div {
+.meal-div-class {
     background: #283640;
     border: 3px solid #1cd992;
     border-radius: 6px;
@@ -136,14 +136,14 @@ input {
     margin-bottom: 20px;
 }
 
-#meal-title {
+.meal-title-class {
     margin-top: 0;
     color: white;
     font-family: 'Black Ops One', cursive;
 
 }
 
-#meal-image {
+.meal-image-class {
     width: 200px;
     border-radius: 6px;
 }
