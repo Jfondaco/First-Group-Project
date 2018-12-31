@@ -36,8 +36,10 @@ hideExercise();
     var weightPounds = 0;
     var sex = "";
     var heightInches = 0;
+    var heightFeet = 0;
     // activity factor will be static, 1.4 might change but assumes minimal activity?
     var activityFactor = 1.4;
+    var totalHeight = 0;
     
 
     //on click for calorie result
@@ -48,7 +50,11 @@ hideExercise();
         event.preventDefault();
         age = parseInt($("#calorie-age").val().trim());
         weightPounds = parseInt($("#calorie-weight").val().trim());
+        heightFeet = parseInt($("#calorie-height-ft").val().trim())
         heightInches = parseInt($("#calorie-height-inches").val().trim());
+        totalHeight = (heightFeet * 12)+heightInches;
+        console.log(totalHeight);
+
         sex = $("input[name=gender]:checked").val();
         console.log(sex);
 
@@ -72,16 +78,7 @@ hideExercise();
                 var recipeID = results[i].id;
                 console.log(recipeID);
 
-                $.ajax({
-                    url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/'+recipeID+'/summary',
-                    method: "GET",
-                    headers:{
-                        'X-RapidAPI-Key': "zM5QZP2R1kmshOJ36ahyXh8O0o5zp1Pf94ojsnoBY9BXmViWZq"
-                    }
-                }).then(function(response){
-                var recipeData = response.summary;
-                console.log(recipeData);
-                });
+                
 
                 var mealDiv = $("<div>");
                 mealDiv.attr("id", "meal-div");
@@ -94,15 +91,31 @@ hideExercise();
                 mealTitle.attr("id", "meal-title");
                 mealTitle.text(results[i].title);
 
-                var mealRecipe = $("<p>");
-                mealRecipe.attr("id", "meal-recipe");
-                // mealRecipe.text(recipeData);
-
                 mealDiv.append(mealTitle);
                 mealDiv.append(mealImg);
-                // mealDiv.append(recipeData);
+                
+                $("#result").append(mealDiv);
+                
+                $.ajax({
+                    url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/"+recipeID+"/summary",
+                    method: "GET",
+                    headers:{
+                        'X-RapidAPI-Key': "zM5QZP2R1kmshOJ36ahyXh8O0o5zp1Pf94ojsnoBY9BXmViWZq"
+                    }
+                }).then(function(response){
+                
+                var recipeData = response.summary;
+                console.log(recipeData);
 
-                $("#result").prepend(mealDiv);
+                var mealRecipe = $("<p>");
+                mealRecipe.attr("id", "meal-recipe");
+                mealRecipe.text(recipeData);
+                mealDiv.append(recipeData);
+
+                
+
+                
+                });
             }
 
             });
@@ -120,7 +133,7 @@ hideExercise();
           sexModifier = -161;
         }
         var weightKilograms = weightPounds / 2.20462;
-        var heightCentimeters = 2.54 * heightInches;
+        var heightCentimeters = 2.54 * totalHeight;
         var bmr = (10 * weightKilograms) + (6.25 * heightCentimeters) - (5 * age) + sexModifier;
         return activityFactor * bmr;
       }
