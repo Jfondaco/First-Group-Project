@@ -472,38 +472,30 @@ function makeArrayCountingUpward(limit) {
   return array;
 }
 
+function addStat(list, statName, statValue) {
+  if (statValue) {
+    var stat = $("<div>");
+    stat.addClass("exercise-stat");
+
+    var name = $("<dt>");
+    name.text(statName);
+    stat.append(name);
+
+    var amount = $("<dd>");
+    amount.text(statValue);
+    stat.append(amount);
+
+    list.append(stat);
+  }
+}
+
 function addStatsList(division, exercise) {
   var stats = $("<dl>");
+  stats.addClass("exercise-stats");
 
-  if (exercise.reps) {
-    var name = $("<dt>");
-    name.text("Reps");
-    stats.append(name);
-
-    var amount = $("<dd>");
-    amount.text(exercise.reps);
-    stats.append(amount);
-  }
-
-  if (exercise.sets) {
-    var name = $("<dt>");
-    name.text("Sets");
-    stats.append(name);
-
-    var amount = $("<dd>");
-    amount.text(exercise.sets);
-    stats.append(amount);
-  }
-
-  if (exercise.time) {
-    var name = $("<dt>");
-    name.text("Time");
-    stats.append(name);
-
-    var amount = $("<dd>");
-    amount.text(exercise.time);
-    stats.append(amount);
-  }
+  addStat(stats, "Reps", exercise.reps);
+  addStat(stats, "Sets", exercise.sets);
+  addStat(stats, "Time", exercise.time);
 
   division.append(stats);
 }
@@ -530,8 +522,10 @@ function onButtonClick() {
     var exercise = group[indices[i]];
     
     var division = $("<div>");
+    division.addClass("exercise");
 
     var heading = $("<h2>");
+    heading.addClass("exercise-title");
     heading.text(exercise.name);
     division.append(heading);
 
