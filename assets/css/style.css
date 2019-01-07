@@ -176,21 +176,65 @@ input {
     0% {bottom: 300px;}
     100% {bottom: 0px;}
 }
-.brand-logo img{
+.logo{
     animation-name: cloud;
     animation-duration: 4s;
 }
 
 /*Media Query*/
-@media only screen and (min-width: 1144px) {
+@media only screen and (max-width: 1144px) {
 
-#exercise-button{
-    margin-left: 10px;
+    .brand-logo {
+        left: 25%;
+    }
+    #meal-button {
+        width: 350px;
+        height: 350px;
+    }
+    #exercise-button {
+        width: 350px;
+        height: 350px;
+    }
 }
-#meal-button{
-    margin-right: 50px;
+  
+@media only screen and (max-width: 768px) {
+
+    #meal-button {
+        width: 300px;
+        height: 300px;
+    }
+    #exercise-button {
+        width: 300px;
+        height: 300px;
+    
+    }   
 }
 
+@media only screen and (max-width: 425px) {
 
+    #meal-button {
+        width: 175px;
+        height: 175px;
+        font-size: 20px;
+    }
+    #exercise-button {
+        width: 175px;
+        height: 175px;
+        font-size: 20px;
+
+    }
+    .nav-wrapper {
+        background: #283640;
+        border: none;
+    }
+    #exercise-areas button{
+        margin-bottom: 10px;
+        width: 60px;
+        font-size: 10px;
+
+    }
+    .space {
+        margin-right: 30px;
+        width: 10px;
+    }
 }
-
