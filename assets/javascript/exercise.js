@@ -462,7 +462,7 @@ var exerciseGroups = {
 
 };
 
-var exercisePickCount = 1;
+var exercisePickCount = 4;
 
 function makeArrayCountingUpward(limit) {
   var array = [];
@@ -470,6 +470,42 @@ function makeArrayCountingUpward(limit) {
     array.push(i);
   }
   return array;
+}
+
+function addStatsList(division, exercise) {
+  var stats = $("<dl>");
+
+  if (exercise.reps) {
+    var name = $("<dt>");
+    name.text("Reps");
+    stats.append(name);
+
+    var amount = $("<dd>");
+    amount.text(exercise.reps);
+    stats.append(amount);
+  }
+
+  if (exercise.sets) {
+    var name = $("<dt>");
+    name.text("Sets");
+    stats.append(name);
+
+    var amount = $("<dd>");
+    amount.text(exercise.sets);
+    stats.append(amount);
+  }
+
+  if (exercise.time) {
+    var name = $("<dt>");
+    name.text("Time");
+    stats.append(name);
+
+    var amount = $("<dd>");
+    amount.text(exercise.time);
+    stats.append(amount);
+  }
+
+  division.append(stats);
 }
 
 function shuffle(array) {
@@ -499,10 +535,24 @@ function onButtonClick() {
     heading.text(exercise.name);
     division.append(heading);
 
-    var description = $("<p>");
-    description.text("Describe how to perform the lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
-    division.append(description);
-    division.addClass("results-div");
+    var instructionsHeading = $("<h3>");
+    instructionsHeading.text("Instructions");
+    division.append(instructionsHeading);
+
+    var instructions = $("<ol>");
+    instructions.addClass("exercise-instructions");
+    for (var j = 0; j < exercise.instructions.length; j++) {
+      var step = $("<li>");
+      step.text(exercise.instructions[j]);
+      instructions.append(step);
+    }
+    division.append(instructions);
+
+    addStatsList(division, exercise);
+
+    var demonstrations = $("<h3>");
+    demonstrations.text("Demonstrations");
+    division.append(demonstrations);
 
     var recommendations = $("<div>");
     recommendations.addClass("recommendations");

@@ -1,10 +1,12 @@
+h3 {
+    font-size: 1.5em;
+}
+
 nav {
     height: 800px;
     background-color: #a62659;
     text-align: center;
 }
-
-
 
 
 .meal-image-class{
@@ -41,9 +43,11 @@ nav {
 .brand-logo {
     position: absolute;
     top: 15%;
-    left: 30%;
-    
-    
+    left: 30%;   
+}
+
+.exercise-instructions {
+    list-style-type: decimal;
 }
 
 
