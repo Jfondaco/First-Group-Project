@@ -134,6 +134,13 @@ input {
     border-radius: 6px;
     padding: 20px;
     margin-bottom: 20px;
+    color: white;
+}
+.meal-div-class::after {
+    content: "";
+    display: block;
+    clear: both;
+  
 }
 
 .meal-title-class {
@@ -146,6 +153,8 @@ input {
 .meal-image-class {
     width: 200px;
     border-radius: 6px;
+    float: left;
+    margin-right: 20px;
 }
 
 .results-div {
@@ -173,4 +182,15 @@ input {
 }
 
 /*Media Query*/
+@media only screen and (min-width: 1144px) {
+
+#exercise-button{
+    margin-left: 10px;
+}
+#meal-button{
+    margin-right: 50px;
+}
+
+
+}
 
