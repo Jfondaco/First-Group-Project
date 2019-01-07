@@ -184,21 +184,19 @@ input {
 /*Media Query*/
 @media only screen and (max-width: 1144px) {
 
-.brand-logo {
-    left: 25%;
+    .brand-logo {
+        left: 25%;
+    }
+    #meal-button {
+        width: 350px;
+        height: 350px;
+    }
+    #exercise-button {
+        width: 350px;
+        height: 350px;
+    }
 }
-#meal-button {
-    width: 350px;
-    height: 350px;
-}
-#exercise-button {
-    width: 350px;
-    height: 350px;
-
-}
-
-
-}
+  
 @media only screen and (max-width: 768px) {
 
     #meal-button {
@@ -209,38 +207,34 @@ input {
         width: 300px;
         height: 300px;
     
+    }   
+}
+
+@media only screen and (max-width: 425px) {
+
+    #meal-button {
+        width: 175px;
+        height: 175px;
+        font-size: 20px;
     }
-    
-    
+    #exercise-button {
+        width: 175px;
+        height: 175px;
+        font-size: 20px;
+
     }
+    .nav-wrapper {
+        background: #283640;
+        border: none;
+    }
+    #exercise-areas button{
+        margin-bottom: 10px;
+        width: 60px;
+        font-size: 10px;
 
-    @media only screen and (max-width: 425px) {
-
-        #meal-button {
-            width: 175px;
-            height: 175px;
-            font-size: 20px;
-        }
-        #exercise-button {
-            width: 175px;
-            height: 175px;
-            font-size: 20px;
-        
-        }
-        .nav-wrapper {
-            background: #283640;
-            border: none;
-        }
-        #exercise-areas button{
-            margin-bottom: 10px;
-            width: 60px;
-            font-size: 10px;
-        
-        }
-        .space {
-            margin-right: 30px;
-            width: 10px;
-        }
-        
-        }
-
+    }
+    .space {
+        margin-right: 30px;
+        width: 10px;
+    }
+}
