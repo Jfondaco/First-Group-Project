@@ -462,7 +462,7 @@ var exerciseGroups = {
 
 };
 
-var exercisePickCount = 1;
+var exercisePickCount = 4;
 
 function makeArrayCountingUpward(limit) {
   var array = [];
@@ -470,6 +470,34 @@ function makeArrayCountingUpward(limit) {
     array.push(i);
   }
   return array;
+}
+
+function addStat(list, statName, statValue) {
+  if (statValue) {
+    var stat = $("<div>");
+    stat.addClass("exercise-stat");
+
+    var name = $("<dt>");
+    name.text(statName);
+    stat.append(name);
+
+    var amount = $("<dd>");
+    amount.text(statValue);
+    stat.append(amount);
+
+    list.append(stat);
+  }
+}
+
+function addStatsList(division, exercise) {
+  var stats = $("<dl>");
+  stats.addClass("exercise-stats");
+
+  addStat(stats, "Reps", exercise.reps);
+  addStat(stats, "Sets", exercise.sets);
+  addStat(stats, "Time", exercise.time);
+
+  division.append(stats);
 }
 
 function shuffle(array) {
@@ -494,15 +522,31 @@ function onButtonClick() {
     var exercise = group[indices[i]];
     
     var division = $("<div>");
+    division.addClass("exercise");
 
     var heading = $("<h2>");
+    heading.addClass("exercise-title");
     heading.text(exercise.name);
     division.append(heading);
 
-    var description = $("<p>");
-    description.text("Describe how to perform the lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
-    division.append(description);
-    division.addClass("results-div");
+    var instructionsHeading = $("<h3>");
+    instructionsHeading.text("Instructions");
+    division.append(instructionsHeading);
+
+    var instructions = $("<ol>");
+    instructions.addClass("exercise-instructions");
+    for (var j = 0; j < exercise.instructions.length; j++) {
+      var step = $("<li>");
+      step.text(exercise.instructions[j]);
+      instructions.append(step);
+    }
+    division.append(instructions);
+
+    addStatsList(division, exercise);
+
+    var demonstrations = $("<h3>");
+    demonstrations.text("Demonstrations");
+    division.append(demonstrations);
 
     var recommendations = $("<div>");
     recommendations.addClass("recommendations");

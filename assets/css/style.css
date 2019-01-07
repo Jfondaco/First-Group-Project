@@ -1,11 +1,43 @@
+dd {
+    display: inline;
+    margin-inline-start: 0;
+}
+
+dt {
+    display: inline;
+    font-weight: bold;
+    margin-inline-end: .5em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
 nav {
     height: 800px;
     background-color: #a62659;
     text-align: center;
 }
 
+.exercise {
+    border: 3px solid #1cd992;
+    border-radius: 6px;
+    margin-bottom: 1em;
+    padding: 1em;
+}
 
+.exercise-instructions {
+    list-style-type: decimal;
+}
 
+.exercise-stat {
+    display: inline-block;
+    margin-inline-end: 2em;
+}
+
+.exercise-title {
+    font-size: 2em;
+}
 
 .meal-image-class{
     width: 150px;
@@ -41,9 +73,7 @@ nav {
 .brand-logo {
     position: absolute;
     top: 15%;
-    left: 30%;
-    
-    
+    left: 30%;   
 }
 
 
