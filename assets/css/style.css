@@ -173,10 +173,10 @@ input {
 
 /*ANIMATION*/
 @keyframes cloud {
-    0% {bottom: 300px;}
-    100% {bottom: 0px;}
+    0% {bottom: 0px;}
+    100% {bottom: 250px;}
 }
-.logo{
+.brand-logo{
     animation-name: cloud;
     animation-duration: 4s;
 }
