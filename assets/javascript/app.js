@@ -93,27 +93,49 @@ hideExercise();
                 mealTitle.attr("id", "meal-title"+recipeID);
                 mealTitle.text(results[i].title);
 
+                let itemRecipeDiv = $("<div>");
+
                 mealDiv.append(mealTitle);
+                mealDiv.append(itemRecipeDiv);
                 mealDiv.append(mealImg);
                 
                 $("#meal-plan-result").append(mealDiv);
                 
-                //ajax for recips
-                $.ajax({
-                    url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/"+recipeID+"/summary",
-                    method: "GET",
-                    headers:{
-                        'X-RapidAPI-Key': "zM5QZP2R1kmshOJ36ahyXh8O0o5zp1Pf94ojsnoBY9BXmViWZq"
-                    }
-                }).then(function(response){
-                
-                console.log("recipe id: "+recipeID)
-                var recipeData = response.summary;
-                console.log(recipeData);
-                
-                $("#meal-div"+recipeID).append(recipeData);
-                
-                });
+                    //ajax for recipes
+                    $.ajax({
+                        url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+recipeID+'/information?includeNutrition=false',
+                        method: "GET",
+                        headers:{
+                            'X-RapidAPI-Key': "zM5QZP2R1kmshOJ36ahyXh8O0o5zp1Pf94ojsnoBY9BXmViWZq"
+                        }
+                    }).then(function(response){
+                        var itemRecipe = response.spoonacularSourceUrl;
+                        console.log("item recipe: "+itemRecipe);
+                        
+                        var itemRecipeh3 = $("<a></a>");            
+                        itemRecipeh3.attr("href", itemRecipe);
+                        itemRecipeh3.html("Recipe")
+                        itemRecipeh3.addClass("itemRecipeAnchor");
+
+                        itemRecipeDiv.append(itemRecipeh3);
+                    });
+
+                        //ajax for recipe summaries
+                        $.ajax({
+                            url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/"+recipeID+"/summary",
+                            method: "GET",
+                            headers:{
+                                'X-RapidAPI-Key': "zM5QZP2R1kmshOJ36ahyXh8O0o5zp1Pf94ojsnoBY9BXmViWZq"
+                            }
+                        }).then(function(response){
+                        
+                        console.log("recipe id: "+recipeID)
+                        var recipeData = response.summary;
+                        console.log(recipeData);
+                        
+                        $("#meal-div"+recipeID).append(recipeData);
+                        
+                        });
             }
 
             });
