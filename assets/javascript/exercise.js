@@ -462,8 +462,14 @@ var exerciseGroups = {
 
 };
 
+// How many exercises to output when a button is pressed.
 var exercisePickCount = 4;
 
+/** 
+ * Summary. Makes an array full of numbers counting upward from 0 to a given number.
+ * 
+ * @param {number} The number to stop at.
+ */
 function makeArrayCountingUpward(limit) {
   var array = [];
   for (var i = 0; i < limit; i++) {
@@ -500,6 +506,9 @@ function addStatsList(division, exercise) {
   division.append(stats);
 }
 
+/**
+ * Summary. Randomly change the order of all elements in an array.
+ */
 function shuffle(array) {
   for (var i = array.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
@@ -513,6 +522,7 @@ function onButtonClick() {
   var value = $(this).val();
   var group = exerciseGroups[value];
 
+  // Fill this array with *non-repeating* random numbers. This is so we can pick the first several from the array and it gives random exercises that aren't the same as each other.
   var indices = makeArrayCountingUpward(group.length);
   shuffle(indices);
 
@@ -555,6 +565,8 @@ function onButtonClick() {
 
     $("#exercise-result").append(division);
   }
+
+  $("#exercise-result")[0].scrollIntoView();
 }
 
 $(document).ready(function() {
