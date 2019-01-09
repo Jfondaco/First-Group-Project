@@ -44,9 +44,6 @@ hideExercise();
 
     //on click for calorie result
     $("#calorie-result").on("click", function(event){
-
-        $("#meal-plan-result").empty();
-
         event.preventDefault();
         age = parseInt($("#calorie-age").val().trim());
         weightPounds = parseInt($("#calorie-weight").val().trim());
@@ -57,6 +54,15 @@ hideExercise();
 
         sex = $("input[name=gender]:checked").val();
         console.log(sex);
+
+        if (age.length === 0
+                || weightPounds.length === 0
+                || heightFeet.length === 0
+                || heightInches.length === 0) {
+            return false;
+        }
+
+        $("#meal-plan-result").empty();
 
         targetCalories = computeCalories();
         console.log("Calories: "+targetCalories)
