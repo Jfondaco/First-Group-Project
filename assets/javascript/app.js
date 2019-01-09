@@ -138,6 +138,8 @@ hideExercise();
                         });
             }
 
+            $("#meal-plan-result")[0].scrollIntoView();
+
             });
 
 
