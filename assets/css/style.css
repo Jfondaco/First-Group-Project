@@ -14,9 +14,14 @@ h3 {
 }
 
 nav {
-    height: 800px;
     background-color: #a62659;
+    height: 800px;
     text-align: center;
+}
+
+.big-button {
+    padding: 50% 0;
+    width: 100%;
 }
 
 .exercise {
@@ -76,6 +81,10 @@ nav {
     left: 30%;   
 }
 
+#exercise-areas {
+    margin-top: 30px;
+}
+
 
 #exercise-result{
     color: white;
@@ -83,8 +92,6 @@ nav {
 
 #meal-button,
 #exercise-button{
-    height: 400px;
-    width: 400px;
     margin-top: 30px;
     border-radius: 10px;
     font-family: 'Black Ops One', cursive;
@@ -120,13 +127,12 @@ input {
 #exercise-areas button {
     background: #1cd992;
     color: #283640;
-    margin: 50px;
     border: 1px solid #283640;
-    /* margin-left: 30px; */
+    margin-bottom: 50px;
     padding: 5px 0;
     border-radius: 6px;
-    width: 100px;
     font-family: 'Black Ops One', cursive;
+    width: 100%;
 }
 #calorie-result {
     background: #1cd992;
@@ -136,7 +142,6 @@ input {
     padding: 5px 0;
     width: 100px;
     font-family: 'Black Ops One', cursive;
-
 }
 #calorie-result:hover {
     background: #283640;
@@ -153,9 +158,6 @@ input {
     margin-right: 60px;
    
 
-}
-.row .col {
-    padding: 0;
 }
 
 .meal-div-class {
@@ -212,56 +214,21 @@ input {
 }
 
 /*Media Query*/
-@media only screen and (max-width: 1144px) {
+@media only screen and (max-width: 1200px) {
 
     .brand-logo {
         left: 25%;
     }
-    #meal-button {
-        width: 350px;
-        height: 350px;
-    }
-    #exercise-button {
-        width: 350px;
-        height: 350px;
-    }
 }
   
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
 
-    #meal-button {
-        width: 300px;
-        height: 300px;
-    }
-    #exercise-button {
-        width: 300px;
-        height: 300px;
-    
-    }   
 }
 
-@media only screen and (max-width: 425px) {
-
-    #meal-button {
-        width: 175px;
-        height: 175px;
-        font-size: 20px;
-    }
-    #exercise-button {
-        width: 175px;
-        height: 175px;
-        font-size: 20px;
-
-    }
+@media only screen and (max-width: 600px) {
     .nav-wrapper {
         background: #283640;
         border: none;
-    }
-    #exercise-areas button{
-        margin-bottom: 10px;
-        width: 60px;
-        font-size: 10px;
-
     }
     .space {
         margin-right: 30px;
