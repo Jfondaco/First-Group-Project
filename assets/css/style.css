@@ -1,3 +1,18 @@
+dd {
+    display: inline;
+    margin-inline-start: 0;
+}
+
+dt {
+    display: inline;
+    font-weight: bold;
+    margin-inline-end: .5em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
 #hero {
     height: 800px;
     background-color: #FFF;
@@ -8,8 +23,25 @@
     text-align: center;
 }
 
+.exercise {
+    border: 3px solid #1cd992;
+    border-radius: 6px;
+    margin-bottom: 1em;
+    padding: 1em;
+}
 
+.exercise-instructions {
+    list-style-type: decimal;
+}
 
+.exercise-stat {
+    display: inline-block;
+    margin-inline-end: 2em;
+}
+
+.exercise-title {
+    font-size: 2em;
+}
 
 .meal-image-class{
     width: 150px;
@@ -47,8 +79,6 @@
     left: 35%;
     top: -15px;
     padding-bottom: 10px;
-    
-    
 }
 
 
@@ -211,21 +241,19 @@ input {
 /*Media Query*/
 @media only screen and (max-width: 1144px) {
 
-.brand-logo {
-    left: 25%;
+    .brand-logo {
+        left: 25%;
+    }
+    #meal-button {
+        width: 350px;
+        height: 350px;
+    }
+    #exercise-button {
+        width: 350px;
+        height: 350px;
+    }
 }
-#meal-button {
-    width: 350px;
-    height: 350px;
-}
-#exercise-button {
-    width: 350px;
-    height: 350px;
-
-}
-
-
-}
+  
 @media only screen and (max-width: 768px) {
 
     #meal-button {
@@ -236,38 +264,34 @@ input {
         width: 300px;
         height: 300px;
     
+    }   
+}
+
+@media only screen and (max-width: 425px) {
+
+    #meal-button {
+        width: 175px;
+        height: 175px;
+        font-size: 20px;
     }
-    
-    
+    #exercise-button {
+        width: 175px;
+        height: 175px;
+        font-size: 20px;
+
     }
+    .nav-wrapper {
+        background: #283640;
+        border: none;
+    }
+    #exercise-areas button{
+        margin-bottom: 10px;
+        width: 60px;
+        font-size: 10px;
 
-    @media only screen and (max-width: 425px) {
-
-        #meal-button {
-            width: 175px;
-            height: 175px;
-            font-size: 20px;
-        }
-        #exercise-button {
-            width: 175px;
-            height: 175px;
-            font-size: 20px;
-        
-        }
-        .nav-wrapper {
-            background: #283640;
-            border: none;
-        }
-        #exercise-areas button{
-            margin-bottom: 10px;
-            width: 60px;
-            font-size: 10px;
-        
-        }
-        .space {
-            margin-right: 30px;
-            width: 10px;
-        }
-        
-        }
-
+    }
+    .space {
+        margin-right: 30px;
+        width: 10px;
+    }
+}
