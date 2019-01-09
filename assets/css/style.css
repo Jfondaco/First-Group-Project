@@ -20,8 +20,23 @@ nav {
 }
 
 .big-button {
-    padding: 50% 0;
+    height: auto;
+    position: relative;
     width: 100%;
+}
+
+.big-button:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.big-button-contents {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .exercise {
@@ -215,14 +230,9 @@ input {
 
 /*Media Query*/
 @media only screen and (max-width: 1200px) {
-
     .brand-logo {
         left: 25%;
     }
-}
-  
-@media only screen and (max-width: 992px) {
-
 }
 
 @media only screen and (max-width: 600px) {
