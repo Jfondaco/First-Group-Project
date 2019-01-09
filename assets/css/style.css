@@ -1,6 +1,10 @@
-nav {
+#hero {
     height: 800px;
-    background-color: #a62659;
+    background-color: #FFF;
+    background-image: url("../images/appBackground.PNG");
+    background-size: cover; 
+    width: 100vw;
+    height: 100vh;
     text-align: center;
 }
 
@@ -40,8 +44,9 @@ nav {
 }
 .brand-logo {
     position: absolute;
-    top: 15%;
-    left: 30%;
+    left: 35%;
+    top: -15px;
+    padding-bottom: 10px;
     
     
 }
@@ -70,13 +75,40 @@ body {
     position: relative;
 }
 
-.logo-text {
+.text {
     position: absolute;
-    bottom: 15%;
-    left: 27%;
+    bottom: 50%;
+    left: 50%;
     font-family: 'Black Ops One', cursive;
-    color: #d9a11c;
+    font-size: 45px;
+    color: #F5967F;
+    transform: translateX(-50%) translateY(-50%);
+    list-style: none;
+    border-bottom: 0;
 }
+
+
+  .text li {
+    display: inline-block;
+    float: left;
+    font-weight: 700;
+    font-size: 2em;
+    color: #283640;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    max-width: 2em;
+  }
+  .text.hidden li.spaced {
+    padding-left: 0;
+  }
+  .text li.spaced {
+    padding-left: 0.3em;
+  }
+  
+.text.hidden li.ghost {
+    opacity: 0;
+    max-width: 0;
+  }
 form{
     color: white;
     margin: 20px;
@@ -171,15 +203,10 @@ input {
 }
 
 
+
+
 /*ANIMATION*/
-@keyframes cloud {
-    0% {bottom: 0px;}
-    100% {bottom: 250px;}
-}
-.brand-logo{
-    animation-name: cloud;
-    animation-duration: 4s;
-}
+
 
 /*Media Query*/
 @media only screen and (max-width: 1144px) {

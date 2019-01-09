@@ -136,3 +136,12 @@ hideExercise();
         return activityFactor * bmr;
       }
       
+
+      //Text Animation
+      $(function(){
+        $(".text").hover(function(){
+          $(this).removeClass("hidden");
+        }, function (){
+          $(this).addClass("hidden");
+        });
+      });
