@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Wellness Cloud",
+    "short_name": "Wellness Cloud",
     "icons": [
         {
             "src": "/assets/images/android-chrome-192x192.png",
@@ -8,8 +8,8 @@
             "type": "image/png"
         },
         {
-            "src": "/assets/images/android-chrome-256x256.png",
-            "sizes": "256x256",
+            "src": "/assets/images/android-chrome-512x512.png",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
