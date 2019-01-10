@@ -23,6 +23,16 @@ h3 {
     text-align: center;
 }
 
+.nav-wrapper{
+    position: relative;
+}
+.container {
+    height: 75vh;
+}
+
+
+
+
 .exercise {
     border: 3px solid #1cd992;
     border-radius: 6px;
@@ -74,12 +84,7 @@ h3 {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.brand-logo {
-    position: absolute;
-    left: 35%;
-    top: -15px;
-    padding-bottom: 10px;
-}
+
 
 
 #exercise-result{
@@ -101,16 +106,12 @@ body {
     background: #283640;
 }
 
-.nav-wrapper {
-    position: relative;
-}
-
 .text {
     position: absolute;
     bottom: 50%;
     left: 50%;
     font-family: 'Black Ops One', cursive;
-    font-size: 45px;
+    font-size: 60px;
     color: #F5967F;
     transform: translateX(-50%) translateY(-50%);
     list-style: none;
@@ -122,10 +123,10 @@ body {
     display: inline-block;
     float: left;
     font-weight: 700;
-    font-size: 2em;
+    /* font-size: 2em; */
     color: #283640;
     opacity: 1;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s;
     max-width: 2em;
   }
   .text.hidden li.spaced {
@@ -180,6 +181,9 @@ input {
     color: #1cd992;
     border: 1px solid #1cd992;
 }
+nav .brand-logo{
+    top: 15%;
+}
 
 .space {
     margin-right: 60px;
@@ -205,6 +209,7 @@ input {
   
 }
 
+
 .meal-title-class {
     margin-top: 0;
     color: white;
@@ -217,6 +222,7 @@ input {
     border-radius: 6px;
     float: left;
     margin-right: 20px;
+    margin-top: 20px;
 }
 
 .results-div {
@@ -231,18 +237,32 @@ input {
     font-family: 'Black Ops One', cursive;
     margin-top: 0px;
 }
+.itemRecipeAnchor {
+    text-decoration: none;
+    color: white;
+    border: solid 1px white;
+    padding: 10px 75px;
+    margin: 10px 0;
+    border-radius: 6px;
+
+
+}
+.itemRecipeAnchor:hover {
+border: solid 1px #1cd992;
+color: #1cd992
+}
 
 
 
-
-/*ANIMATION*/
 
 
 /*Media Query*/
+
 @media only screen and (max-width: 1144px) {
 
-    .brand-logo {
+    nav .brand-logo {
         left: 25%;
+
     }
     #meal-button {
         width: 350px;
@@ -252,6 +272,10 @@ input {
         width: 350px;
         height: 350px;
     }
+    .text {
+        bottom: 50%;
+    }
+    
 }
   
 @media only screen and (max-width: 768px) {
@@ -265,6 +289,8 @@ input {
         height: 300px;
     
     }   
+    .text li {
+        font-size: 45px;
 }
 
 @media only screen and (max-width: 425px) {
@@ -282,6 +308,7 @@ input {
     }
     .nav-wrapper {
         background: #283640;
+        background-image: url(../images/appBackground.PNG);
         border: none;
     }
     #exercise-areas button{
@@ -294,4 +321,7 @@ input {
         margin-right: 30px;
         width: 10px;
     }
+    .text li {
+        font-size: 25px;
+}
 }

@@ -580,3 +580,5 @@ $(document).ready(function() {
   $("#shoulders-button").click(onButtonClick);
   $("#triceps-button").click(onButtonClick);
 });
+
+
