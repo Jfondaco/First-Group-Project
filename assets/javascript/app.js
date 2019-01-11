@@ -68,7 +68,7 @@ hideExercise();
         console.log("Calories: "+targetCalories)
 
         var calorieDiv = $("<div>");
-        calorieDiv.text("Your Target Calories: "+targetCalories);
+        calorieDiv.text("Your Target Calories: "+Math.floor(targetCalories));
         calorieDiv.addClass("calorie-div-class");
         $("#meal-plan-result").append(calorieDiv);
 

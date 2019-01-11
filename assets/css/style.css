@@ -276,6 +276,11 @@ color: #1cd992
 .text {
     bottom: 0;
 }
+.calorie-div-class {
+    color: #FFF;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
 
 /*Media Query*/
 @media only screen and (max-width: 1200px) {
