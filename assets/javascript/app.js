@@ -32,14 +32,14 @@ hideExercise();
     // hide/show functions end
 
     //calorie calculator variables
-    var age = 0;
-    var weightPounds = 0;
-    var sex = "";
-    var heightInches = 0;
-    var heightFeet = 0;
+    // var age = 0;
+    // var weightPounds = 0;
+    // var sex = "";
+    // var heightInches = 0;
+    // var heightFeet = 0;
     // activity factor will be static, 1.4 might change but assumes minimal activity?
     var activityFactor = 1.4;
-    var totalHeight = 0;
+    // var totalHeight = 0;
     
 
     //on click for calorie result
@@ -66,6 +66,11 @@ hideExercise();
 
         targetCalories = computeCalories();
         console.log("Calories: "+targetCalories)
+
+        var calorieDiv = $("<div>");
+        calorieDiv.text("Your Target Calories: "+targetCalories);
+        calorieDiv.addClass("calorie-div-class");
+        $("#meal-plan-result").append(calorieDiv);
 
         var spoonURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?targetCalories="+targetCalories+"&timeFrame=day";
 
@@ -118,12 +123,13 @@ hideExercise();
                         var itemRecipe = response.spoonacularSourceUrl;
                         console.log("item recipe: "+itemRecipe);
                         
-                        var itemRecipeh3 = $("<a></a>");            
-                        itemRecipeh3.attr("href", itemRecipe);
-                        itemRecipeh3.html("Recipe")
-                        itemRecipeh3.addClass("itemRecipeAnchor");
+                        var itemRecipeAnchor = $("<a></a>");            
+                        itemRecipeAnchor.attr("href", itemRecipe);
+                        itemRecipeAnchor.attr("target", "_blank");
+                        itemRecipeAnchor.html("Recipe")
+                        itemRecipeAnchor.addClass("itemRecipeAnchor");
 
-                        itemRecipeDiv.append(itemRecipeh3);
+                        itemRecipeDiv.append(itemRecipeAnchor);
                     });
 
                         //ajax for recipe summaries
@@ -136,10 +142,10 @@ hideExercise();
                         }).then(function(response){
                         
                         console.log("recipe id: "+recipeID)
-                        var recipeData = response.summary;
-                        console.log(recipeData);
+                        var recipeSummary = response.summary;
+                        console.log(recipeSummary);
                         
-                        $("#meal-div"+recipeID).append(recipeData);
+                        $("#meal-div"+recipeID).append(recipeSummary);
                         
                         });
             }
