@@ -23,7 +23,6 @@ h3 {
     text-align: center;
 }
 
-<<<<<<< HEAD
 .nav-wrapper{
     position: relative;
 }
@@ -33,7 +32,6 @@ h3 {
 
 
 
-=======
 .big-button {
     height: auto;
     position: relative;
@@ -53,7 +51,6 @@ h3 {
     top: 50%;
     transform: translateY(-50%);
 }
->>>>>>> master
 
 .exercise {
     border: 3px solid #1cd992;
@@ -271,53 +268,26 @@ border: solid 1px #1cd992;
 color: #1cd992
 }
 
+.brand-logo {
+    position: relative;
+    width: 100%;
+}
 
-
-
+.text {
+    bottom: 0;
+}
 
 /*Media Query*/
-<<<<<<< HEAD
-
-@media only screen and (max-width: 1144px) {
-
-    nav .brand-logo {
-=======
 @media only screen and (max-width: 1200px) {
     .brand-logo {
->>>>>>> master
         left: 25%;
-
     }
-<<<<<<< HEAD
-    #meal-button {
-        width: 350px;
-        height: 350px;
-    }
-    #exercise-button {
-        width: 350px;
-        height: 350px;
-    }
-    .text {
-        bottom: 50%;
-    }
-    
 }
-  
-@media only screen and (max-width: 768px) {
 
-    #meal-button {
-        width: 300px;
-        height: 300px;
-    }
-    #exercise-button {
-        width: 300px;
-        height: 300px;
-    
-    }   
+@media only screen and (max-width: 768px) {
     .text li {
         font-size: 45px;
-=======
->>>>>>> master
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -332,5 +302,5 @@ color: #1cd992
     }
     .text li {
         font-size: 25px;
-}
+    }
 }
