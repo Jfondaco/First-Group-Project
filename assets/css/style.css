@@ -282,6 +282,20 @@ color: #1cd992
     margin-bottom: 10px;
 }
 
+#enter-age {
+    color:red;
+    font-size:10px;
+}
+
+#enter-weight {
+    color:red;
+    font-size:10px;
+}
+
+#enter-height{
+    color:red;
+    font-size:10px;
+}
 /*Media Query*/
 @media only screen and (max-width: 1200px) {
     .brand-logo {
