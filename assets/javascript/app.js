@@ -31,38 +31,65 @@ hideExercise();
     }
     // hide/show functions end
 
-    //calorie calculator variables
-    // var age = 0;
-    // var weightPounds = 0;
-    // var sex = "";
-    // var heightInches = 0;
-    // var heightFeet = 0;
-    // activity factor will be static, 1.4 might change but assumes minimal activity?
     var activityFactor = 1.4;
-    // var totalHeight = 0;
-    
-
+    var age = 0;
+    var weightPounds = 0;
+    var heightFeet = 0;
+    var heightInches = 0;
+   
     //on click for calorie result
     $("#calorie-result").on("click", function(event){
         event.preventDefault();
+
         age = parseInt($("#calorie-age").val().trim());
         weightPounds = parseInt($("#calorie-weight").val().trim());
         heightFeet = parseInt($("#calorie-height-ft").val().trim())
         heightInches = parseInt($("#calorie-height-inches").val().trim());
-        totalHeight = (heightFeet * 12)+heightInches;
-        console.log(totalHeight);
-
+        
         sex = $("input[name=gender]:checked").val();
         console.log(sex);
 
-        if (age.length === 0
-                || weightPounds.length === 0
-                || heightFeet.length === 0
-                || heightInches.length === 0) {
+        $("#age-div").empty();
+        $("#weight-div").empty();
+        $("#height-div").empty();
+
+        var hasError = false;
+
+        if (isNaN(age) || age === 0){
+            var enterAge = $("<div>");
+            enterAge.text("Please Enter Your Age");
+            enterAge.attr("id", "enter-age");
+            $("#age-div").append(enterAge);
+            hasError = true;
+        }
+        if (isNaN(weightPounds) || weightPounds === 0){
+            var enterWeight = $("<div>");
+            enterWeight.text("Please Enter Your Weight");
+            enterWeight.attr("id", "enter-weight");
+            $("#weight-div").append(enterWeight);
+            hasError = true;
+        }
+        
+        if (isNaN(heightFeet) || heightFeet === 0){
+            var enterHeight = $("<div>");
+            enterHeight.text("Please Enter Your Height");
+            enterHeight.attr("id", "enter-height");
+            $("#height-div").append(enterHeight);
+            hasError = true;
+        }
+
+        if (isNaN(heightInches)) {
+            heightInches = 0;
+        }
+        
+        $("#meal-plan-result").empty();
+
+        if (hasError) {
             return false;
         }
 
-        $("#meal-plan-result").empty();
+        totalHeight = (heightFeet * 12)+heightInches;
+        console.log(totalHeight);
 
         targetCalories = computeCalories();
         console.log("Calories: "+targetCalories)
@@ -153,9 +180,8 @@ hideExercise();
             $("#meal-plan-result")[0].scrollIntoView();
 
             });
-
-
     });
+        
     //end on click for calorie result
 
     //formula function for daily calories
